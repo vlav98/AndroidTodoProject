@@ -21,6 +21,7 @@ class LoginFragment : Fragment() {
     // TODO: Rename and change types of parameters
     private var param1: String? = null
     private var param2: String? = null
+    //https://bf1c2958-117f-4bbb-9b96-b77ded2ea179.mock.pstmn.io/login
 
     override fun onCreate(savedInstanceState: Bundle?) {
         super.onCreate(savedInstanceState)
