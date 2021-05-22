@@ -4,8 +4,13 @@ import androidx.room.Database
 import androidx.room.RoomDatabase
 import com.example.androidkotlinproject.data.db.NasaImageOfTheDayDao
 import com.example.androidkotlinproject.data.model.NasaImageOfTheDay
+import com.example.androidkotlinproject.data.model.Todo
 
-@Database(entities = arrayOf(NasaImageOfTheDay::class), version = 1)
+@Database(
+    entities = [Todo::class],
+    version = 1,
+    exportSchema = false
+)
 abstract class MyAppDatabase : RoomDatabase() {
-    abstract fun nasaImageOfTheDayDao(): NasaImageOfTheDayDao
+    abstract fun todoDao(): TodoDao
 }
