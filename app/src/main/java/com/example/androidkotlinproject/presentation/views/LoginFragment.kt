@@ -6,7 +6,9 @@ import androidx.fragment.app.Fragment
 import android.view.LayoutInflater
 import android.view.View
 import android.view.ViewGroup
+import android.widget.Toast
 import com.example.androidkotlinproject.R
+import com.example.androidkotlinproject.domain.EmailUtils
 import com.example.androidkotlinproject.presentation.MainActivity
 import com.example.androidkotlinproject.presentation.viewmodel.TodoViewModel
 import kotlinx.android.synthetic.main.fragment_login.*
@@ -49,11 +51,21 @@ class LoginFragment : Fragment() {
         }
 
         if(!connected) {
-
+            login()
         }
 
         log_signup_button.setOnClickListener {
             (activity as MainActivity).navigateToSignUp()
+        }
+    }
+
+    private fun login() {
+        log_login_button.setOnClickListener {
+            if (EmailUtils.isEmailValid(log_text_email.text) && log_text_password.text.isNotEmpty()) {
+                Toast.makeText(activity, "non connecté: email: ${log_text_email.text} & mot de passe: ${log_text_password.text}", Toast.LENGTH_SHORT).show()
+            } else {
+                Toast.makeText(activity, "non connecté: email: ${log_text_email.text} & mot de passe: ${log_text_password.text}", Toast.LENGTH_SHORT).show()
+            }
         }
     }
 
