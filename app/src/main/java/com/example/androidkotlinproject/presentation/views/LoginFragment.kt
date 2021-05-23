@@ -62,7 +62,7 @@ class LoginFragment : Fragment() {
     private fun login() {
         log_login_button.setOnClickListener {
             if (EmailUtils.isEmailValid(log_text_email.text) && log_text_password.text.isNotEmpty()) {
-                Toast.makeText(activity, "non connecté: email: ${log_text_email.text} & mot de passe: ${log_text_password.text}", Toast.LENGTH_SHORT).show()
+                // TODO get Login
             } else {
                 Toast.makeText(activity, "non connecté: email: ${log_text_email.text} & mot de passe: ${log_text_password.text}", Toast.LENGTH_SHORT).show()
             }
