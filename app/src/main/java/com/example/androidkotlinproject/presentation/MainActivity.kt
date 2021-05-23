@@ -16,11 +16,6 @@ class MainActivity : AppCompatActivity() {
     private lateinit var navController: NavController
     private lateinit var sharedPref: SharedPreferences
 
-    override fun attachBaseContext(context: Context?) {
-        super.attachBaseContext(context)
-        MultiDex.install(this)
-    }
-
     override fun onCreate(savedInstanceState: Bundle?) {
         super.onCreate(savedInstanceState)
         setContentView(R.layout.activity_main)
@@ -28,13 +23,6 @@ class MainActivity : AppCompatActivity() {
         val navHostFragment =
             supportFragmentManager.findFragmentById(R.id.nav_host_fragment) as NavHostFragment
         navController = navHostFragment.navController
-
-        sharedPref = getSharedPreferences(GlobalConstants.SHARED_PREF_KEY, Context.MODE_PRIVATE)
-        val firstNameKey = GlobalConstants.getFirstName()
-        val lastNameKey = GlobalConstants.getName()
-        if(firstNameKey != null && lastNameKey != null) {
-            this.navigateToTodo()
-        }
     }
 
     fun navigateToSignUp(){
