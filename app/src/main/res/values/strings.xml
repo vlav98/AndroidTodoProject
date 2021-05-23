@@ -11,6 +11,7 @@
     <string name="email">E-mail</string>
     <string name="name">Name</string>
     <string name="fname">First name</string>
-    <string name="error_network">"Une erreur est survenue lors de la connexion."</string>
+    <string name="error_network">Une erreur est survenue lors de la connexion.</string>
+    <string name="hello_user">Bonjour %2$s %2$s</string>
 
 </resources>

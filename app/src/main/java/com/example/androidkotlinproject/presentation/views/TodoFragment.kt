@@ -1,5 +1,6 @@
 package com.example.androidkotlinproject.presentation.views
 
+//import com.example.androidkotlinproject.presentation.adapter.TodoAdapter
 import android.os.Bundle
 import android.view.LayoutInflater
 import android.view.View
@@ -9,7 +10,6 @@ import androidx.recyclerview.widget.LinearLayoutManager
 import androidx.recyclerview.widget.RecyclerView
 import com.example.androidkotlinproject.R
 import com.example.androidkotlinproject.data.model.Todo
-//import com.example.androidkotlinproject.presentation.adapter.TodoAdapter
 import com.example.androidkotlinproject.presentation.viewmodel.TodoViewModel
 import kotlinx.android.synthetic.main.fragment_todo.*
 
@@ -29,6 +29,7 @@ class TodoFragment : Fragment() {
     private lateinit var viewModel: TodoViewModel
     private var todoList: ArrayList<Todo> = ArrayList()
     private lateinit var recyclerView: RecyclerView
+    var helloString: String? = null
 
     override fun onCreate(savedInstanceState: Bundle?) {
         super.onCreate(savedInstanceState)
@@ -38,6 +39,7 @@ class TodoFragment : Fragment() {
             todoList = it.getString(ARG_PARAM2)
             */
         }
+        val helloString = getString(R.string.hello_user, "Nom", "Prénom")
     }
 
     override fun onCreateView(
